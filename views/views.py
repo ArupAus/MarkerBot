@@ -57,7 +57,7 @@ def grab_latest_content():
 @index_view.route("/index")
 @requires_auth
 def index():
-    pre_work = requests.get('https://raw.githubusercontent.com/ArupAus/lunchtimepython/2017/Session0/README.md').text
+    pre_work = requests.get('{0}Session0/README.md'.format(ROOT_URL)).text
     course_readme = requests.get('{0}readme.md'.format(ROOT_URL)).text
     course_material_json = grab_latest_content()
     cheat_sheet = requests.get('{0}cheat_sheet.md'.format(ROOT_URL)).text
